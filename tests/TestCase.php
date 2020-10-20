@@ -2,9 +2,9 @@
 
 namespace Coreproc\Paymaya\Tests;
 
+use Coreproc\Paymaya\PaymayaServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Coreproc\Paymaya\PaymayaServiceProvider;
 
 class TestCase extends Orchestra
 {

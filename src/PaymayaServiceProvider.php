@@ -5,7 +5,6 @@ namespace Coreproc\PaymayaLaravel;
 use CoreProc\PayMaya\Clients\Checkout\CheckoutClient;
 use CoreProc\PayMaya\Clients\Checkout\CustomizeClient;
 use CoreProc\PayMaya\Clients\Checkout\WebhookClient;
-use Coreproc\Paymaya\Commands\PaymayaCommand;
 use CoreProc\PayMaya\PayMayaClient;
 use Exception;
 use Illuminate\Support\ServiceProvider;
