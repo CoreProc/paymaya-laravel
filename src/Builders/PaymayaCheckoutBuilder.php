@@ -146,6 +146,7 @@ class PaymayaCheckoutBuilder
                 if ($item['model']->is($paymayaItem)) {
                     $item['quantity'] = $item['quantity'] + $quantity;
                     $itemAlreadySet = true;
+
                     break;
                 }
             }
