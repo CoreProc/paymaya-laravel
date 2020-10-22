@@ -141,7 +141,7 @@ class PaymayaCheckoutBuilder
     public function setItem(PaymayaItem $paymayaItem, $quantity = 1): PaymayaCheckoutBuilder
     {
         if (!$paymayaItem instanceof Model) {
-            throw new \ErrorException(get_class($paymayaItem).' must subclass of '.Model::class);
+            throw new \ErrorException(get_class($paymayaItem).' must be a subclass of '.Model::class);
         }
         
         $itemAlreadySet = false;
