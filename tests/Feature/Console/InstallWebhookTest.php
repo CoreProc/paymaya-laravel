@@ -27,9 +27,10 @@ class InstallWebhookTest extends TestCase
             'payment_failed' => 'http://localhost/failed',
             'payment_expired' => 'http://localhost/expired',
         ]);
+        $this->routes($app['router']);
     }
 
-    protected function defineRoutes($router)
+    protected function routes($router)
     {
         $action = function () {
             return null;
