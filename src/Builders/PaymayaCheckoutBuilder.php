@@ -12,6 +12,7 @@ use CoreProc\PayMaya\Requests\Checkout\TotalAmount;
 use CoreProc\PayMaya\Requests\Contact;
 use CoreProc\PayMaya\Requests\RedirectUrl;
 use Coreproc\PaymayaLaravel\Contracts\PaymayaItem;
+use Illuminate\Database\Eloquent\Model;
 
 class PaymayaCheckoutBuilder
 {
@@ -139,6 +140,10 @@ class PaymayaCheckoutBuilder
      */
     public function setItem(PaymayaItem $paymayaItem, $quantity = 1): PaymayaCheckoutBuilder
     {
+        if (!$paymayaItem instanceof Model) {
+            throw new \ErrorException(get_class($paymayaItem).' must be a subclass of '.Model::class);
+        }
+        
         $itemAlreadySet = false;
 
         if (! empty($this->items)) {
