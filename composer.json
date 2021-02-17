@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "coreproc/paymaya-sdk": "^2.3",
+        "coreproc/paymaya-sdk": "^2.3.2",
         "illuminate/contracts": "^6.0 || ^7.0 || ^8.0"
     },
     "require-dev": {

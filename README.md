@@ -53,6 +53,8 @@ return [
 
 ## Usage
 
+### Creating a payment
+
 ``` php
 use CoreProc\PayMaya\PayMayaClient;
 use CoreProc\PayMaya\Requests\Address;
@@ -84,6 +86,26 @@ $response = PaymayaCheckoutClientFacade::post($checkout);
 $result = PayMayaClient::getDataFromResponse($response);
 
 return redirect()->to($result->redirectUrl);
+```
+
+### Installing the webhooks
+
+```
+php artisan paymaya:install-webhook
+```
+This command will register all webhooks defined in the configuration file. To register only the
+webhooks you need, remove webhooks from the array.
+
+You can also refer to the webhook's callback URL using the route name.
+```php
+<?php
+return [
+    'webhooks' => [
+        'payment_success' => 'hooks.paymaya.success',
+        'payment_failed' => 'hooks.paymaya.failed',
+        'payment_expired' => 'hooks.paymaya.expired',
+    ],
+];
 ```
 
 ## Contributing

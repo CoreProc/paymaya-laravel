@@ -6,6 +6,7 @@ use CoreProc\PayMaya\Clients\Checkout\CheckoutClient;
 use CoreProc\PayMaya\Clients\Checkout\CustomizeClient;
 use CoreProc\PayMaya\Clients\Checkout\WebhookClient;
 use CoreProc\PayMaya\PayMayaClient;
+use Coreproc\PaymayaLaravel\Console\Commands\InstallWebhook;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,8 @@ class PaymayaServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/paymaya.php' => config_path('paymaya.php'),
             ], 'config');
+
+            $this->commands([InstallWebhook::class]);
         }
     }
 
